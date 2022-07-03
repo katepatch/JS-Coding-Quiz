@@ -74,7 +74,7 @@ var questions = [
     answerBtn.classList.remove("hide");
     randomQuestions = questions.sort(() => Math.random() > .5 ? 1 : -1);
     currentIndex = 0;
-    questionText.innerHTML = questions[currentIndex].question;
+    
     nextQuestion();
     ans1.addEventListener("click", chooseAnswer);
     ans2.addEventListener("click", chooseAnswer);
@@ -91,4 +91,21 @@ function nextQuestion() {
     } else {
         showQuestions(randomQuestion[currentIndex]);
     }
+}
+
+function showQuestions(question) {
+    questionText.innerHTML = questions[currentIndex].question;
+    let choices = questions[currentIndex].options;
+    choices.sort(() => Math.random() > .5 ? 1 : -1);
+
+    a1.textContent = choices[0].text;
+    a2.textContent = choices[1].text;
+    a3.textContent = choices[2].text;
+    a4.textContent = choices[3].text;
+
+    a1.value = choices[0].correct;
+    a2.value = choices[1].correct;
+    a3.value = choices[2].correct;
+    a4.value = choices[3].correct;
+
 }
