@@ -74,10 +74,20 @@ var questions = [
     answerBtn.classList.remove("hide");
     currentIndex = 0;
     questionText.innerHTML = questions[currentIndex].question;
-
+    nextQuestion();
     ans1.addEventListener("click", chooseAnswer);
     ans2.addEventListener("click", chooseAnswer);
     ans3.addEventListener("click", chooseAnswer);
     ans4.addEventListener("click", chooseAnswer);
 
   }
+function nextQuestion() {
+    if (currentIndex >= questions.length) {
+        correct.classList.add('hide');
+        incorrect.classList.add('hide');
+        clearInterval(countDown);
+        submitHighScore();
+    } else {
+        showQuestions(currentIndex);
+    }
+}
