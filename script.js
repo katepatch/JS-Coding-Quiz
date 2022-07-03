@@ -61,3 +61,17 @@ var questions = [
   ];
 
   startBtn.addEventListener('click', startQuiz);
+
+  function startQuiz() {
+    startBtn.classList.add("hide");
+    countDown = setInterval(timer, 1000);
+    answerBtn.classList.remove("hide");
+    currentIndex = 0;
+    questionText.innerHTML = questions[currentIndex].question;
+    
+    ans1.addEventListener("click", chooseAnswer);
+    ans2.addEventListener("click", chooseAnswer);
+    ans3.addEventListener("click", chooseAnswer);
+    ans4.addEventListener("click", chooseAnswer);
+
+  }

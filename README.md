@@ -33,3 +33,11 @@ THEN the game is over
 WHEN the game is over
 
 THEN I can save my initials and score
+
+## Deployed URL
+
+<https://katepatch.github.io/JS-Coding-Quiz/>
+
+## Github Repo Link
+
+<https://github.com/katepatch/JS-Coding-Quiz>
