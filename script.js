@@ -107,5 +107,19 @@ function showQuestions(question) {
     a2.value = choices[1].correct;
     a3.value = choices[2].correct;
     a4.value = choices[3].correct;
+}
 
+function chooseAnswer(event) {
+    correct.classList.add("hide");
+    incorrect.classList.add("hide");
+    if (event.target.value == "true") {
+        correct.classList.remove("hide");
+        currentIndex++;
+        nextQuestion();
+    } else {
+        timeSecond = timeSecond - 5;
+        incorrect.classList.remove("hide");
+        currentIndex++;
+        nextQuestion();
+    }
 }
