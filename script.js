@@ -16,24 +16,24 @@ var questions = [
     {
       question: "Commonly used data types DO NOT include:",
       choices: [
-        {text: "alerts", correct: true},
-        {text: "numbers", correct: false},
+        {text: "alerts", choice: true},
+        {text: "numbers", choice: false},
     ]          
     },
 
     {
       question: "The condition in an if / else statement is enclosed within ____.",
       choices: [
-        {text: "parentheses", correct: true},
-        {text: "square brackets", correct: false}, 
+        {text: "parentheses", choice: true},
+        {text: "square brackets", choice: false}, 
       ]
     },
 
     {
       question: "Arrays in JavaScript can be used to store ____.",
       choices: [
-        {text: "numbers and strings, other arrays, booleans", correct: true},
-        {text: "styles", correct: false},
+        {text: "numbers and strings, other arrays, booleans", choice: true},
+        {text: "styles", choice: false},
       ]
     },
 
@@ -59,8 +59,8 @@ var questions = [
   function startQuiz() {
     startBtn.classList.add("hide");
     questionText.innerHTML = questions[currentIndex].question;
-    a1.innerHTML = questions[currentIndex].choices[0].text;
-    a1.onclick = () => {
+    trueBtn.innerHTML = questions[currentIndex].choices[0].text;
+    trueBtn.onclick = () => {
         let ano=0;
         if(questions[currentIndex].choices[ano].text){
             if(score<5){
@@ -72,8 +72,8 @@ var questions = [
             nextQuestion();
         }
     }
-    a2.innerHTML = questions[currentIndex].choices[1].text;
-    a2.onclick = () => {
+    falseBtn.innerHTML = questions[currentIndex].choices[1].text;
+    falseBtn.onclick = () => {
         let ano=1;
         if(questions[currentIndex].choices[ano].text) {
             if(score<5){
