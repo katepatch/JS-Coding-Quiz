@@ -1,7 +1,6 @@
 var startBtn = document.getElementById("start-quiz");
-var answerBtn = document.getElementById("button-option");
+var answerBtn = document.getElementById("answer-buttons");
 var questionText = document.getElementById('question-ask');
-
 var timer = 120;
 var countDown;
 var a1 = document.getElementById("ans1");
@@ -72,9 +71,9 @@ var questions = [
     startBtn.classList.add("hide");
     countDown = setInterval(timer, 1000);
     answerBtn.classList.remove("hide");
-    randomQuestions = questions.sort(() => Math.random() > .5 ? 1 : -1);
+    // randomQuestions = questions.sort(() => Math.random() > .5 ? 1 : -1);
     currentIndex = 0;
-    
+    showQuestions();
     nextQuestion();
     ans1.addEventListener("click", chooseAnswer);
     ans2.addEventListener("click", chooseAnswer);
@@ -92,9 +91,9 @@ function nextQuestion() {
     }
 }
 
-function showQuestions(question) {
+function showQuestions(questions) {
     questionText.innerHTML = questions[currentIndex].question;
-    let choices = questions[currentIndex].options;
+    let choices = questions[currentIndex].choices;
     choices.sort(() => Math.random() > .5 ? 1 : -1);
 
     a1.textContent = choices[0].text;
@@ -112,12 +111,10 @@ function chooseAnswer(event) {
     correct.classList.add("hide");
     incorrect.classList.add("hide");
     if (event.target.value == "true") {
-        
         currentIndex++;
         nextQuestion();
     } else {
-        timeSecond = timeSecond - 5;
-        
+        sec = sec - 5;
         currentIndex++;
         nextQuestion();
     }
