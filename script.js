@@ -72,6 +72,7 @@ var questions = [
     startBtn.classList.add("hide");
     countDown = setInterval(timer, 1000);
     answerBtn.classList.remove("hide");
+    randomQuestions = questions.sort(() => Math.random() > .5 ? 1 : -1);
     currentIndex = 0;
     questionText.innerHTML = questions[currentIndex].question;
     nextQuestion();
@@ -88,6 +89,6 @@ function nextQuestion() {
         clearInterval(countDown);
         submitHighScore();
     } else {
-        showQuestions(currentIndex);
+        showQuestions(randomQuestion[currentIndex]);
     }
 }
