@@ -2,6 +2,12 @@ var startBtn = document.getElementById("start-quiz");
 var answerBtn = document.getElementById("button-option");
 var questionText = document.getElementById('question-ask');
 
+var timer = 120;
+var countDown;
+var a1 = document.getElementById("ans1");
+var a2 = document.getElementById("ans2");
+var a3 = document.getElementById("ans3");
+var a4 = document.getElementById("ans4");
 
 
 
@@ -68,7 +74,7 @@ var questions = [
     answerBtn.classList.remove("hide");
     currentIndex = 0;
     questionText.innerHTML = questions[currentIndex].question;
-    
+
     ans1.addEventListener("click", chooseAnswer);
     ans2.addEventListener("click", chooseAnswer);
     ans3.addEventListener("click", chooseAnswer);
