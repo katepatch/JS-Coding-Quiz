@@ -3,12 +3,10 @@ var answerBtn = document.getElementById("answer-buttons");
 var questionText = document.getElementById('question-ask');
 var timerCount = 120;
 var countDown;
-var a1 = document.getElementById("ans1");
-var a2 = document.getElementById("ans2");
-// var a3 = document.getElementById("ans3");
-// var a4 = document.getElementById("ans4");
+var trueBtn = document.getElementById("true");
+var falseBtn = document.getElementById("false");
 var timerEl = document.getElementsByClass("timer-count");
-
+var userScore = document.getElementById("user-score");
 
 
 let currentIndex = 0;
@@ -18,8 +16,6 @@ var questions = [
     {
       question: "Commonly used data types DO NOT include:",
       choices: [
-        // {text: "strings", correct: false},
-        // {text: "booleans", correct: false},
         {text: "alerts", correct: true},
         {text: "numbers", correct: false},
     ]          
@@ -27,9 +23,7 @@ var questions = [
 
     {
       question: "The condition in an if / else statement is enclosed within ____.",
-      choices: [ 
-        // {text: "quotes", correct: false},
-        // {text: "curly brakcets", correct: false},
+      choices: [
         {text: "parentheses", correct: true},
         {text: "square brackets", correct: false}, 
       ]
@@ -40,8 +34,6 @@ var questions = [
       choices: [
         {text: "numbers and strings, other arrays, booleans", correct: true},
         {text: "styles", correct: false},
-        // {text: "booleans", correct: false},
-        // {text: "all of the above", correct: true},
       ]
     },
 
@@ -49,9 +41,7 @@ var questions = [
       question: "String values must be enclosed within ____ when being assigned to variables.",
       choices: [
         {text: "commas", correct: false},
-        // {text: "curly brackets", correct: false},
         {text: "quotes", correct: true},
-        // {text: "parentheses", correct: false},
       ]
     },
 
@@ -59,8 +49,6 @@ var questions = [
       question: "A very useful tool used during development and debugging for printing content to the debugger is:",
       choices: [
         {text: "console.log", correct: true},
-        // {text: "JavaScript", correct: false},
-        // {text: "terminal/bash", correct: false},
         {text: "for loops", correct: false},
       ]
     }
