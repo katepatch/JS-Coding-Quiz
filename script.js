@@ -84,8 +84,7 @@ var questions = [
   }
 function nextQuestion() {
     if (currentIndex >= questions.length) {
-        correct.classList.add('hide');
-        incorrect.classList.add('hide');
+        
         clearInterval(countDown);
         submitHighScore();
     } else {
@@ -113,12 +112,12 @@ function chooseAnswer(event) {
     correct.classList.add("hide");
     incorrect.classList.add("hide");
     if (event.target.value == "true") {
-        correct.classList.remove("hide");
+        
         currentIndex++;
         nextQuestion();
     } else {
         timeSecond = timeSecond - 5;
-        incorrect.classList.remove("hide");
+        
         currentIndex++;
         nextQuestion();
     }
