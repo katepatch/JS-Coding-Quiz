@@ -7,6 +7,7 @@ var a1 = document.getElementById("ans1");
 var a2 = document.getElementById("ans2");
 var a3 = document.getElementById("ans3");
 var a4 = document.getElementById("ans4");
+var timerEl = document.getElementsByClass("timer-count");
 
 
 
@@ -69,6 +70,7 @@ var questions = [
 
   function startQuiz() {
     startBtn.classList.add("hide");
+    questionText.innerHTML = questions[currentIndex].question;
     countDown = setInterval(timer, 1000);
     answerBtn.classList.remove("hide");
     // randomQuestions = questions.sort(() => Math.random() > .5 ? 1 : -1);
@@ -92,7 +94,7 @@ function nextQuestion() {
 }
 
 function showQuestions(questions) {
-    questionText.innerHTML = questions[currentIndex].question;
+    
     let choices = questions[currentIndex].choices;
     choices.sort(() => Math.random() > .5 ? 1 : -1);
 
@@ -114,17 +116,22 @@ function chooseAnswer(event) {
         currentIndex++;
         nextQuestion();
     } else {
-        sec = sec - 5;
+        timer = timer - 5;
         currentIndex++;
         nextQuestion();
     }
 }
 
 function timer() {
-    document.getElementById('remaining').innerHTML = sec;
-    sec--;
-    if (sec <= -1) {
+   timer--;
+   timerEl.textContent=timer;
+    if (timer <= -1) {
         clearInterval(countDown);
         alert("Outta Time!");
+        endQuiz();
     }
+}
+
+function endQuiz() {
+    clearInterval(timer);
 }
