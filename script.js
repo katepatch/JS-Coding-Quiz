@@ -119,3 +119,12 @@ function chooseAnswer(event) {
         nextQuestion();
     }
 }
+
+function timer() {
+    document.getElementById('remaining').innerHTML = sec;
+    sec--;
+    if (sec <= -1) {
+        clearInterval(countDown);
+        alert("Outta Time!");
+    }
+}
