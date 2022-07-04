@@ -13,10 +13,10 @@
                 <a id="top-scores" href="#">High Scores</a>
                 <div id="timer">Time: <span  class="timer-count" id="remaining">120 seconds</span></div>
             </header>
-
-            <div class="content" id="question-box">
+            <br>
+            <div class="content hide" id="question-box">
                 <div id="question-ask"></div>
-                <div class="answer-options hide" id="answer-buttons">
+                <div class="answer-options" id="answer-buttons">
                     <button class="button button-option" id="true">True</button>
                     <button class="button button-option" id="false">False</button>
                   
@@ -24,11 +24,13 @@
             </div>
             <div class="start-buttons">
                 <button class="button start-btn" id="start-quiz">Start</button>
-                <button class=" button submit-btn hide" id="submit">Submit</button>
+                <button class=" button next-btn hide" id="next">Next</button>
             </div>
-            <div class="score">
+            <div class="score hide">
                 <span id="user-score">0</span>
                 <span id="total">/5</span>
+                <label for="initials">Please enter initials:<input type="text" name="initials" id="initials"></label>
+                <button class="submit">Submit Score</button>
             </div>
 
         </div>

@@ -1,5 +1,5 @@
 var startBtn = document.getElementById("start-quiz");
-var answerBtn = document.getElementById("answer-buttons");
+var nextBtn = document.getElementById("next");
 var questionText = document.getElementById('question-ask');
 var timerCount = 120;
 var countDown;
@@ -7,6 +7,7 @@ var trueBtn = document.getElementById("true");
 var falseBtn = document.getElementById("false");
 var timerEl = document.getElementsByClass("timer-count");
 var userScore = document.getElementById("user-score");
+var answerOptions = document.getElementByClass("button-option")
 
 
 let currentIndex = 0;
@@ -40,21 +41,22 @@ var questions = [
     {
       question: "String values must be enclosed within ____ when being assigned to variables.",
       choices: [
-        {text: "commas", correct: false},
-        {text: "quotes", correct: true},
+        {text: "commas", choice: false},
+        {text: "quotes", choice: true},
       ]
     },
 
     {
       question: "A very useful tool used during development and debugging for printing content to the debugger is:",
       choices: [
-        {text: "console.log", correct: true},
-        {text: "for loops", correct: false},
+        {text: "console.log", choice: true},
+        {text: "for loops", choice: false},
       ]
     }
   ];
 
   startBtn.addEventListener('click', startQuiz);
+  nextBtn.addEventListener('click', nextQuestion);
 
   function startQuiz() {
     startBtn.classList.add("hide");
@@ -62,7 +64,7 @@ var questions = [
     trueBtn.innerHTML = questions[currentIndex].choices[0].text;
     trueBtn.onclick = () => {
         let ano=0;
-        if(questions[currentIndex].choices[ano].text){
+        if(questions[currentIndex].choices[ano].choice){
             if(score<5){
                 score++;
             }
@@ -75,7 +77,7 @@ var questions = [
     falseBtn.innerHTML = questions[currentIndex].choices[1].text;
     falseBtn.onclick = () => {
         let ano=1;
-        if(questions[currentIndex].choices[ano].text) {
+        if(questions[currentIndex].choices[ano].choice) {
             if(score<5){
                 score++;
             }
